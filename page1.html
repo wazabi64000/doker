@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Introduction à Docker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav id="navbar">
+      <div class="logo">Docker Cours 2025</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="page1.html" class="active">Introduction</a></li>
+        <li><a href="page2.html">Installation</a></li>
+        <li><a href="page3.html">Concepts</a></li>
+        <li><a href="page4.html">Tutoriel</a></li>
+        <li><a href="page5.html">Exercice</a></li>
+      </ul>
+      <div class="burger">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="content">
+      <h1>Introduction à Docker</h1>
+      
+      <p><strong>Docker</strong> est un outil qui permet de créer, déployer et exécuter des applications dans des conteneurs. Un conteneur est un petit environnement isolé qui contient tout ce dont une application a besoin pour fonctionner : code, bibliothèques et configurations.</p>
+
+      <h2>Pourquoi utiliser Docker ?</h2>
+      <ul>
+        <li><strong>Consistance :</strong> L'application fonctionne de la même façon sur tous les ordinateurs.</li>
+        <li><strong>Isolation :</strong> Chaque application est dans son propre conteneur, elle ne gêne pas les autres.</li>
+        <li><strong>Facilité de déploiement :</strong> On peut lancer une application sur n'importe quel serveur rapidement.</li>
+        <li><strong>Économie de ressources :</strong> Les conteneurs utilisent moins de ressources que les machines virtuelles.</li>
+      </ul>
+
+      <h2>Une métaphore simple :</h2>
+      <p>Imagine que tu prépares des plats dans une cuisine :</p>
+      <ul>
+        <li>Chaque plat a ses ingrédients et sa recette. C’est ton application.</li>
+        <li>Tu mets tous les ingrédients dans une boîte spéciale (le conteneur) avec la recette. Peu importe où tu transportes la boîte, tu obtiendras le même plat.</li>
+        <li>Docker, c’est le système qui crée et gère ces boîtes pour que tout reste identique partout.</li>
+      </ul>
+
+      <h2>Cas concrets d'utilisation :</h2>
+      <ol>
+        <li><strong>Développeurs :</strong> Travailler sur plusieurs projets avec des dépendances différentes sans conflits.</li>
+        <li><strong>Tests automatiques :</strong> Lancer des tests sur un environnement identique à la production.</li>
+        <li><strong>Déploiement :</strong> Déployer une application sur un serveur cloud rapidement.</li>
+        <li><strong>Microservices :</strong> Gérer de nombreuses petites applications indépendantes qui communiquent entre elles.</li>
+      </ol>
+
+      <h2>Exemple concret :</h2>
+      <p>Supposons que tu développes un site web avec Nginx et une base de données MySQL :</p>
+      <ul>
+        <li>Sur ton ordinateur, tout fonctionne.</li>
+        <li>Si tu déplaces ton code sur un autre ordinateur, il peut y avoir des problèmes de versions ou de configuration.</li>
+        <li>Avec Docker, tu mets Nginx et MySQL dans des conteneurs. Peu importe l’ordinateur ou le serveur : ton site fonctionne exactement de la même façon.</li>
+      </ul>
+
+      <div class="navigation-buttons">
+        <a href="index.html" class="btn">Retour Accueil</a>
+        <a href="page2.html" class="btn">Suivant : Installation</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Cours Docker - Tous droits réservés</p>
+  </footer>
+
+  <script>
+    const burger = document.querySelector('.burger');
+    const nav = document.querySelector('.nav-links');
+
+    burger.addEventListener('click', () => {
+      nav.classList.toggle('nav-active');
+      burger.classList.toggle('toggle');
+    });
+  </script>
+</body>
+</html>

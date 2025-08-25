@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tutoriel Docker pas-à-pas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav id="navbar">
+      <div class="logo">Docker Cours 2025</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="page1.html">Introduction</a></li>
+        <li><a href="page2.html">Installation</a></li>
+        <li><a href="page3.html">Concepts</a></li>
+        <li><a href="page4.html" class="active">Tutoriel</a></li>
+        <li><a href="page5.html">Exercice</a></li>
+      </ul>
+      <div class="burger">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="content">
+      <h1>Tutoriel Docker pas-à-pas</h1>
+      <p>Dans ce tutoriel, nous allons créer et lancer notre premier conteneur Docker, étape par étape, avec tests pour chaque étape.</p>
+
+      <h2>Étape 1 : Vérifier l'installation de Docker</h2>
+      <pre><code>
+docker --version
+docker run hello-world
+      </code></pre>
+      <p>Si vous voyez un message de bienvenue de Docker, votre installation est correcte.</p>
+
+      <h2>Étape 2 : Télécharger une image Docker</h2>
+      <pre><code>
+docker pull nginx
+docker images
+      </code></pre>
+      <p>Vous devez voir l'image <code>nginx</code> dans la liste.</p>
+
+      <h2>Étape 3 : Lancer un conteneur Nginx</h2>
+      <pre><code>
+docker run -d -p 8080:80 --name mon-nginx nginx
+      </code></pre>
+      <p>Ouvrez votre navigateur et allez sur <code>http://localhost:8080</code>. Vous devriez voir la page d'accueil Nginx.</p>
+
+      <h2>Étape 4 : Lister les conteneurs en cours</h2>
+      <pre><code>
+docker ps
+      </code></pre>
+      <p>Vous devez voir <code>mon-nginx</code> en cours d’exécution.</p>
+
+      <h2>Étape 5 : Arrêter et supprimer le conteneur</h2>
+      <pre><code>
+docker stop mon-nginx
+docker rm mon-nginx
+      </code></pre>
+      <p>Le conteneur est maintenant arrêté et supprimé.</p>
+
+      <h2>Étape 6 : Créer votre premier Dockerfile</h2>
+      <pre><code>
+# Créer un fichier Dockerfile
+nano Dockerfile
+
+# Exemple de contenu :
+FROM nginx
+COPY index.html /usr/share/nginx/html/
+      </code></pre>
+      <p>Construisez ensuite votre image personnalisée :</p>
+      <pre><code>
+docker build -t mon-nginx-personnalise .
+docker run -d -p 8080:80 mon-nginx-personnalise
+      </code></pre>
+      <p>Vérifiez que votre page personnalisée s’affiche sur <code>http://localhost:8080</code>.</p>
+
+      <div class="navigation-buttons">
+        <a href="page3.html" class="btn">Retour Concepts</a>
+        <a href="page5.html" class="btn">Suivant : Exercice pratique</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Cours Docker - Tous droits réservés</p>
+  </footer>
+
+  <script>
+    const burger = document.querySelector('.burger');
+    const nav = document.querySelector('.nav-links');
+
+    burger.addEventListener('click', () => {
+      nav.classList.toggle('nav-active');
+      burger.classList.toggle('toggle');
+    });
+  </script>
+</body>
+</html>

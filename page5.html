@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercice pratique Docker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav id="navbar">
+      <div class="logo">Docker Cours 2025</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="page1.html">Introduction</a></li>
+        <li><a href="page2.html">Installation</a></li>
+        <li><a href="page3.html">Concepts</a></li>
+        <li><a href="page4.html">Tutoriel</a></li>
+        <li><a href="page5.html" class="active">Exercice</a></li>
+      </ul>
+      <div class="burger">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="content">
+      <h1>Exercice pratique : Créer votre site web Dockerisé</h1>
+      <p>Dans cet exercice, vous allez créer un mini-site web HTML et le déployer dans un conteneur Docker Nginx.</p>
+
+      <h2>Étape 1 : Créer les fichiers du projet</h2>
+      <pre><code>
+mkdir mon-site
+cd mon-site
+nano index.html
+      </code></pre>
+      <p>Exemple de contenu pour <code>index.html</code> :</p>
+      <pre><code>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Mon site Docker</title>
+</head>
+<body>
+  <h1>Bienvenue sur mon site Dockerisé !</h1>
+  <p>Exercice pratique terminé avec succès.</p>
+</body>
+</html>
+      </code></pre>
+
+      <h2>Étape 2 : Créer un Dockerfile</h2>
+      <pre><code>
+nano Dockerfile
+</code></pre>
+      <p>Exemple de contenu :</p>
+      <pre><code>
+FROM nginx
+COPY index.html /usr/share/nginx/html/
+      </code></pre>
+
+      <h2>Étape 3 : Construire et lancer le conteneur</h2>
+      <pre><code>
+docker build -t mon-site-docker .
+docker run -d -p 8080:80 mon-site-docker
+      </code></pre>
+      <p>Ouvrez votre navigateur et allez sur <code>http://localhost:8080</code> pour voir votre site.</p>
+
+      <h2>Étape 4 : Vérifier et nettoyer</h2>
+      <pre><code>
+docker ps          # Vérifier le conteneur en cours
+docker stop <ID>    # Arrêter le conteneur
+docker rm <ID>      # Supprimer le conteneur
+docker rmi mon-site-docker  # Supprimer l'image
+      </code></pre>
+
+      <h2>Challenge bonus</h2>
+      <p>Essayez de créer un **volume Docker** pour stocker un fichier texte modifiable, afin que les modifications persistent même si le conteneur est supprimé.</p>
+
+      <div class="navigation-buttons">
+        <a href="page4.html" class="btn">Retour Tutoriel</a>
+        <a href="index.html" class="btn">Retour Accueil</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Cours Docker - Tous droits réservés</p>
+  </footer>
+
+  <script>
+    const burger = document.querySelector('.burger');
+    const nav = document.querySelector('.nav-links');
+
+    burger.addEventListener('click', () => {
+      nav.classList.toggle('nav-active');
+      burger.classList.toggle('toggle');
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cours Docker 2025 - Accueil</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav id="navbar">
+      <div class="logo">Docker Cours 2025</div>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Accueil</a></li>
+        <li><a href="page1.html">Introduction</a></li>
+        <li><a href="page2.html">Installation</a></li>
+        <li><a href="page3.html">Concepts</a></li>
+        <li><a href="page4.html">Tutoriel</a></li>
+        <li><a href="page5.html">Exercice</a></li>
+      </ul>
+      <div class="burger">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Bienvenue dans le cours Docker 2025</h1>
+      <p>Apprenez Docker de manière simple, pas-à-pas et pratique. Que vous soyez débutant ou développeur confirmé, ce cours vous guidera dans la création, le déploiement et la gestion de conteneurs.</p>
+      <a href="page1.html" class="btn">Commencer le cours</a>
+    </section>
+
+    <section class="overview">
+      <h2>Ce que vous allez apprendre :</h2>
+      <ul>
+        <li>Concept concret de Docker et son rôle dans le développement et le déploiement.</li>
+        <li>Installation sur Linux, Windows et Mac.</li>
+        <li>Création et gestion de conteneurs et images Docker.</li>
+        <li>Tutoriel pas-à-pas avec tests à chaque étape.</li>
+        <li>Exercices pratiques pour mettre vos compétences en action.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Cours Docker - Tous droits réservés</p>
+  </footer>
+
+  <script>
+    const burger = document.querySelector('.burger');
+    const nav = document.querySelector('.nav-links');
+
+    burger.addEventListener('click', () => {
+      nav.classList.toggle('nav-active');
+      burger.classList.toggle('toggle');
+    });
+  </script>
+</body>
+</html>

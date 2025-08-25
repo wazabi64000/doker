@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Installation Docker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav id="navbar">
+      <div class="logo">Docker Cours 2025</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="page1.html">Introduction</a></li>
+        <li><a href="page2.html" class="active">Installation</a></li>
+        <li><a href="page3.html">Concepts</a></li>
+        <li><a href="page4.html">Tutoriel</a></li>
+        <li><a href="page5.html">Exercice</a></li>
+      </ul>
+      <div class="burger">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="content">
+      <h1>Installation de Docker</h1>
+      <p>Suivez les instructions correspondant à votre système d’exploitation pour installer Docker et tester qu’il fonctionne correctement.</p>
+
+      <h2>1. Linux (Ubuntu/Debian)</h2>
+      <pre><code>
+# Mettre à jour le système
+sudo apt update
+sudo apt install apt-transport-https ca-certificates curl software-properties-common
+
+# Ajouter la clé Docker et le dépôt
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+# Installer Docker
+sudo apt update
+sudo apt install docker-ce
+
+# Vérifier l'installation
+docker --version
+docker run hello-world
+      </code></pre>
+
+      <h2>2. Windows</h2>
+      <ol>
+        <li>Téléchargez <a href="https://www.docker.com/products/docker-desktop" target="_blank">Docker Desktop</a>.</li>
+        <li>Installez-le en suivant les instructions.</li>
+        <li>Ouvrez PowerShell et vérifiez :</li>
+      </ol>
+      <pre><code>
+docker --version
+docker run hello-world
+      </code></pre>
+
+      <h2>3. Mac (macOS)</h2>
+      <ol>
+        <li>Téléchargez <a href="https://www.docker.com/products/docker
